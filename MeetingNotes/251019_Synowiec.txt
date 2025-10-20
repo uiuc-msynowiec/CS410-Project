@@ -1,0 +1,8 @@
+Planning to use dataset:
+https://amazon-reviews-2023.github.io/
+
+Will start populating the repo with any notes or links for the different sections of the project:
+Frontend - Streamlit (Alden), chrome extension (Charlene, Mark)
+DataCleaning (Charlene, Mark)
+LLM-RAG (Advaith, Nate)
+AmazonRatingSearch
