@@ -1,0 +1,45 @@
+Add brief comments to talk about your challenges
+
+Add a link to your report
+
+Tutorial video – how to use code, show how it works
+
+Upload to Illinois media space
+
+3 amazon projects from 2024
+
+ 
+
+Mentions
+
+Take id into another post to make a link between them
+
+Own collection of reviews
+
+Could add a chrome extension to highlight – somewhere to type a query to search reviews
+
+Can highlight a part that youre interested in, you could retrieve which reviews talk to that
+
+Add percentage of reviews that specify certain words
+
+Chrome plugin for textdata to svae highlighted text
+
+ 
+
+Plugin could track what people ask for certain products
+
+Look up past projects for chrome plugin
+
+Retrieval augmented generation
+
+The agent uses tools, can call a search engine to do the work, fire a query process results and get back to user
+Llm is brain, agents are hands and feet
+Langraph, talk to pyserini – model context protocol (MCP)
+
+Tech review will be light
+
+ 
+
+Llms have been trained on a lot of publicly available data and books. Rags are best suited for information the llms wouildnt have access to, like private, proprietary data. Or choose a situation where the llm doesn’t do well.
+
+The key is your systems relationship with chatgpt. Do you mean to compete with chatgpt, ie use your system to diagnose instead of chatgpt?
