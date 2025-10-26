@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Amazon Test Extension",
+    "version": "1.0",
+    "description": "A simple test extension that modifies Amazon slightly.",
+    "content_scripts": [
+      {
+        "matches": ["*://www.amazon.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "128": "icon.png"
+    }
+  }
+  
