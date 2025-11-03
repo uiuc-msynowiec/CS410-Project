@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Amazon Test Extension 2.0",
+  "version": "2.0",
+  "description": "A test extension that modifies Amazon and provides a utility popup.",
+  
+  "action": {
+    "default_popup": "410Project.html",
+    "default_icon": {
+      "128": "icon_2.png"
+    },
+    "default_title": "Utility Actions"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["*://www.amazon.com/*"],
+      "js": ["popup.js"]
+    }
+  ],
+  
+  "icons": {
+    "128": "icon.png"
+  }
+  
+}
