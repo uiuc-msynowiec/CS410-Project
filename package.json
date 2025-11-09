@@ -1,0 +1,25 @@
+{
+  "name": "cs410-project",
+  "version": "1.0.0",
+  "description": "## 1. Open the Extensions Page Go to: chrome://extensions",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uiuc-msynowiec/CS410-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uiuc-msynowiec/CS410-Project/issues"
+  },
+  "homepage": "https://github.com/uiuc-msynowiec/CS410-Project#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}

@@ -1,7 +1,6 @@
 (function () {
     if (document.getElementById('amazon-extension-app')) return;
   
-    //modal container based on charlene's html
     const modal = document.createElement('div');
     modal.id = 'amazon-extension-app';
     modal.classList.add('extension-modal-wrapper');
@@ -24,9 +23,6 @@
   
               <div>
                   <button id="action-button" class="action-button">
-                      <svg class="button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2m-9 0V3h4v2m-4 0h4"></path>
-                      </svg>
                       Run Extension Logic
                   </button>
               </div>
@@ -44,16 +40,37 @@
     `;
   
     document.body.appendChild(modal);
+    const style = document.createElement('style');
+    style.textContent = `
+      #amazon-extension-app .input-field {
+        color: black !important;
+        background-color: white !important;
+        border: 1px solid #ccc;
+      }
+    
+      #amazon-extension-app label {
+        color: white !important;
+      }
+    
+      #amazon-extension-app .output-text {
+        color: black !important;
+      }
+    `;
+    document.head.appendChild(style);
   
-    //close button
-    modal.querySelector('#close-modal').addEventListener('click', () => modal.remove());
-  
-    //minimize button
+    const button = modal.querySelector('#action-button');
+    const inputField = modal.querySelector('#input-field');
+    const output = modal.querySelector('#output-area');
+    const closeBtn = modal.querySelector('#close-modal');
     const minimizeBtn = modal.querySelector('#minimize-modal');
     const content = modal.querySelector('main');
     const footer = modal.querySelector('footer');
-    let minimized = false;
+    const dragHandle = modal.querySelector('.drag-handle');
+    
+    //adding moving, resizing
+    closeBtn.addEventListener('click', () => modal.remove());
   
+    let minimized = false;
     minimizeBtn.addEventListener('click', () => {
       minimized = !minimized;
       content.style.display = minimized ? 'none' : 'flex';
@@ -62,10 +79,7 @@
       minimizeBtn.textContent = minimized ? '+' : '—';
     });
   
-    //add moveability
-    const dragHandle = modal.querySelector('.drag-handle');
     let offsetX, offsetY, isDragging = false;
-  
     dragHandle.addEventListener('mousedown', (e) => {
       isDragging = true;
       offsetX = e.clientX - modal.offsetLeft;
@@ -85,7 +99,39 @@
       dragHandle.style.cursor = 'grab';
     });
   
-    //add resizing
     modal.style.resize = 'both';
     modal.style.overflow = 'auto';
-  })();  
+  
+    //query sending to api
+    button.addEventListener('click', async () => {
+      const query = inputField.value.trim();
+      if (!query) {
+        output.textContent = 'Please enter a query.';
+        return;
+      }
+  
+      output.textContent = 'Thinking...';
+      console.log('Sending query to background:', query);
+  
+      //sending messagr to backgroundjs
+      chrome.runtime.sendMessage(
+        { action: 'runOpenAIQuery', query },
+        (response) => {
+          if (!response) {
+            output.textContent = 'No response from background.';
+            console.error('No response from background');
+            return;
+          }
+  
+          if (response.success) {
+            output.textContent = response.result;
+            console.log('Received response:', response);
+          } else {
+            output.textContent = 'Error: ' + response.error;
+            console.error('Error from background:', response.error);
+          }
+        }
+      );
+    });
+  })();
+  

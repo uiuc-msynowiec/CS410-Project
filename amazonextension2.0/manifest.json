@@ -1,9 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Amazon Floating Modal",
-  "version": "3.1",
-  "description": "Displays a draggable, resizable, and minimizable modal on Amazon pages.",
-  
+  "version": "3.2",
+  "description": "Draggable modal with OpenAI product recommendations.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["*://www.amazon.com/*"],
@@ -11,9 +14,6 @@
       "css": ["modal.css"]
     }
   ],
-  
-  "permissions": ["activeTab"],
-  
   "icons": {
     "128": "icon.png"
   }
