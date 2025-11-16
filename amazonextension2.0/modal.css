@@ -1,0 +1,182 @@
+/* style for modal moved here as suggested by Charlene. */
+.extension-modal-wrapper {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    width: 320px;
+    background-color: #111827;
+    color: #f3f4f6;
+    border: 1px solid #374151;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 999999;
+    font-family: 'Inter', sans-serif;
+    resize: both;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header Section */
+  .header {
+    padding: 0.75rem;
+    border-bottom: 1px solid #374151;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    position: relative;
+    cursor: grab;
+    background-color: #1f2937;
+  }
+  
+  .header-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #818cf8;
+  }
+  
+  .header-subtitle {
+    font-size: 0.75rem;
+    color: #9ca3af;
+  }
+  
+  /* Control Buttons (minimize/close) */
+  .modal-buttons {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 0.25rem;
+  }
+  
+  .modal-buttons button {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .modal-buttons button:hover {
+    color: #f3f4f6;
+  }
+  
+  /* Main Content */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Input Field */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #d1d5db;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    background-color: #374151;
+    border: 1px solid #4b5563;
+    border-radius: 0.5rem;
+    color: #f3f4f6;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
+  }
+  
+  .input-field::placeholder {
+    color: #9ca3af;
+  }
+  
+  /* Button */
+  .action-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #4f46e5;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.15s ease-in-out;
+  }
+  
+  .action-button:hover {
+    background-color: #4338ca;
+  }
+  
+  .action-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.5);
+  }
+  
+  /* SVG Icon */
+  .button-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  /* Output Box */
+  .output-box {
+    padding: 0.75rem;
+    background-color: #374151;
+    border-radius: 0.5rem;
+    border: 1px solid #4b5563;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .output-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #d1d5db;
+    margin-bottom: 0.25rem;
+  }
+  
+  .output-text {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-style: italic;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 0.75rem;
+    border-top: 1px solid #374151;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .footer-link {
+    font-size: 0.75rem;
+    color: #818cf8;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+  }
+  
+  .footer-link:hover {
+    color: #a5b4fc;
+  }  

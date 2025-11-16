@@ -1,0 +1,3 @@
+Created python tools to process the jsonl data set.
+Created a subset of the electronics dataset, zipped it and pushed it to the repo so we can work with a more manageable dataset as we figure out how to work with and reformat the data.
+Created a process.bat script to be able to recreate the data subset.

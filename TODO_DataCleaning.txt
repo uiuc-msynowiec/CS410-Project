@@ -1,0 +1,2 @@
+research llm expected data format and add a link to the LLM directory - Advaith
+create tools to parse the data into word counts for the full dataset for TF-IDF/BM25 searches like in MP1 - Mark
