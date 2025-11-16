@@ -36,10 +36,8 @@ The agent uses tools, can call a search engine to do the work, fire a query proc
 Llm is brain, agents are hands and feet
 Langraph, talk to pyserini – model context protocol (MCP)
 
+Professor mentioned:
 Tech review will be light
-
  
 
-Llms have been trained on a lot of publicly available data and books. Rags are best suited for information the llms wouildnt have access to, like private, proprietary data. Or choose a situation where the llm doesn’t do well.
-
-The key is your systems relationship with chatgpt. Do you mean to compete with chatgpt, ie use your system to diagnose instead of chatgpt?
+Llms have been trained on a lot of publicly available data and books. RAGs are well suited for information the llms wouildnt have access to, like private, proprietary data. Or choose a situation where the llm doesn’t do well.
