@@ -6,7 +6,8 @@ Readded logo in JSON
 
 TO DO:
 Add more functionality to the chrome extension (i.e light/dark mode)
-Help Mark with cleaning data
 Compile Progress Report
+Add clean data set into the Chrome Extension and make sure the data's read
+Draw flowchart
 
 
