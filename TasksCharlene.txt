@@ -1,0 +1,12 @@
+DONE:
+Explored and researched how to make a chrome extension
+Did frontend design of chrome extension and chose logo
+Cleaned up some files in the amazon extension folder in order to test/debug Alden's version 3.0
+Readded logo in JSON
+
+TO DO:
+Add more functionality to the chrome extension (i.e light/dark mode)
+Help Mark with cleaning data
+Compile Progress Report
+
+
