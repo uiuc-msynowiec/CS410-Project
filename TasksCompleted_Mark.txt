@@ -1,3 +1,9 @@
 Created python tools to process the jsonl data set.
 Created a subset of the electronics dataset, zipped it and pushed it to the repo so we can work with a more manageable dataset as we figure out how to work with and reformat the data.
-Created a process.bat script to be able to recreate the data subset.
+Merged the metadata file with the reviews file to create a single text for each item containing all reviews and useful descriptive data.
+Generated a processed corpus that matches MP1 to be able to use MP1 python tools to search the data.
+Created batch scripts to be able to recreate the data subset.
+
+
+Reformatted as a paragraph:
+I created python tools to process the jsonl data set. A subset of the electronics datasetwas generated so we can work with a more manageable dataset as we develop a process to reformat and work with the data. The metadata file was merged with the reviews file to create a single text entry for each item which contains all reviews and useful descriptive data for that item. A processed corpus was then generated which matches MP1 in order to use MP1 python tools to search the data. I created batch scripts ensure we can easily recreate the data subset as necessary.
