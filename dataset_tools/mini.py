@@ -21,9 +21,9 @@ for x in range(len):
     #print(file.readline().strip(), file=output)
     print(file.readline().strip())
 
-print(f'wrote the first {len} lines of {filename} to {outfile}')
+#print(f'wrote the first {len} lines of {filename} to {outfile}')
 
 file.close()
-output.close()
+#output.close()
 
 
