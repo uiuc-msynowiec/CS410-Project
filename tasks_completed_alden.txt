@@ -1,0 +1,4 @@
+Created basic front end search engine templat for later results display
+Integrated Charlene's modal model design into the chrome extension
+Hooked up openai api functionality to the modal to send product suggestions back.
+Set up the foundation of the chrome extension ie manifest and context files.
