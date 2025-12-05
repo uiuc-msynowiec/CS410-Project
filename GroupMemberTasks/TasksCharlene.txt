@@ -1,13 +1,14 @@
 DONE:
 Explored and researched how to make a chrome extension
+Researched how to test a chrome extension
 Did frontend design of chrome extension and chose logo
 Cleaned up some files in the amazon extension folder in order to test/debug Alden's version 3.0
 Readded logo in JSON
+Compiled Progress Report
 
 TO DO:
-Add more functionality to the chrome extension (i.e light/dark mode)
-Compile Progress Report
-Add clean data set into the Chrome Extension and make sure the data's read
 Draw flowchart
+Compile Slides with Nate
+Add light and dark mode.
 
 
