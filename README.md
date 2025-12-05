@@ -1,3 +1,8 @@
+# Setting up API
+## 1. go to amazon-extension2.0 folder
+## 2. Create a .env file in this folder.
+## 3. Paste OPENAI_API_KEY=your_key in
+
 # 🚀 Loading the Chrome Extension
 
 ## 1. Open the Extensions Page
