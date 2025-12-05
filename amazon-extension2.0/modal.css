@@ -158,8 +158,9 @@
   
   .output-text {
     font-size: 0.75rem;
-    color: #9ca3af;
+    color: white;
     font-style: italic;
+    font-size: 16px;
   }
   
   /* Footer */
