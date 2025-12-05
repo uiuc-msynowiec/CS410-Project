@@ -1,0 +1,4 @@
+1. Conducted research on how to utilize Ollama to run a local model from a dataset cleaned up.
+2. Hooked up a llama3.1:latest model to use as our choice of LLM due to its small but effienct sizing. 
+3. Additionally used nomic-embed-text:latest to help convert text to vectors for similarity scoring to give context to the llama3.1:latest model.
+4. Was having issues with pulling the .jsonl datasets from within the zipped folders so working with Nate on how to write a custom python script to be able to access the .jsonl file within the zipped folder without having to directly unzip the folders and save the uncompressed .jsonl file somwhere.

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body {
+            background-color: #030712; /* Default dark background */
+            color: #f3f4f6;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Simplified Container (Acts like the modal body) */
+        .simplified-container {
+            width: 300px;
+            background-color: #111827; /* Dark BG */
+            color: #f3f4f6; /* Light Text */
+            border: 1px solid #374151; /* Dark Border */
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* To contain border-radius */
+        }
+        
+        /* Main Content Area */
+        .main-content-wrapper {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        /* Button */
+        .action-button {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #4f46e5;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                        0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        .action-button:hover {
+            background-color: #4338ca;
+        }
+
+        .action-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Output Box */
+        .output-box {
+            width: 100%;
+            padding: 1rem;
+            background-color: #374151;
+            border-radius: 0.5rem;
+            border: 1px solid #4b5563;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .output-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #d1d5db;
+            margin-bottom: 0.5rem;
+        }
+
+        .output-text {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #818cf8; /* Primary color highlight */
+            transition: color 0.3s;
+        }
+        
+        /* --- Footer Styles --- */
+        footer {
+            padding: 0.75rem 1.5rem; /* Match side padding of main content */
+            border-top: 1px solid #374151;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .footer-link {
+            font-size: 0.875rem;
+            color: #818cf8;
+            text-decoration: none;
+            transition: color 0.15s ease-in-out;
+            font-weight: 500;
+        }
+
+        .footer-link:hover {
+            color: #a5b4fc;
+        }
+        /* --- END Footer Styles --- */
+
+
+        /* --- Light Mode Overrides --- */
+        body.light-mode {
+            background-color: #f9fafb;
+            color: #111827;
+        }
+
+        .light-mode .simplified-container {
+            background-color: #ffffff;
+            color: #1f2937;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .light-mode .output-box {
+            background-color: #f3f4f6;
+            border: 1px solid #d1d5db;
+        }
+
+        .light-mode .output-title {
+            color: #374151;
+        }
+
+        .light-mode .output-text {
+            color: #4f46e5;
+        }
+        
+        .light-mode footer {
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .light-mode .footer-link {
+            color: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app-container" class="simplified-container">
+
+        <!-- Main Content (Theme Toggler and Status) -->
+        <div class="main-content-wrapper">
+            <!-- Output Box: Current Theme Status -->
+            <div class="output-box">
+                <p class="output-title">Current Theme</p>
+                <p class="output-text" id="current-theme-status">Loading...</p>
+            </div>
+
+            <!-- Theme Switch Button -->
+            <button id="theme-toggle-button" class="action-button">
+                Switch Theme
+            </button>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <!-- Hyperlink points to settings.html -->
+            <a href="settings.html" class="footer-link">Settings</a>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const themeStatus = document.getElementById('current-theme-status');
+            const themeToggleButton = document.getElementById('theme-toggle-button');
+
+            // --- Theme Management ---
+
+            const THEME_KEY = 'appTheme';
+
+            /**
+             * Applies the stored theme or defaults to 'dark'.
+             */
+            function initializeTheme() {
+                let currentTheme = localStorage.getItem(THEME_KEY) || 'dark';
+                applyTheme(currentTheme);
+            }
+
+            /**
+             * Applies the given theme to the body and updates the UI.
+             * @param {string} theme - 'light' or 'dark'
+             */
+            function applyTheme(theme) {
+                const isLight = theme === 'light';
+
+                if (isLight) {
+                    body.classList.add('light-mode');
+                } else {
+                    body.classList.remove('light-mode');
+                }
+                
+                // Update text status
+                const themeName = isLight ? 'Light' : 'Dark';
+                themeStatus.textContent = themeName + ' Mode';
+                
+                // Update button text
+                themeToggleButton.textContent = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+
+                localStorage.setItem(THEME_KEY, theme);
+            }
+
+            // --- Theme Toggle Listener ---
+            if (themeToggleButton) {
+                themeToggleButton.addEventListener('click', () => {
+                    // Determine the current theme from the body class list
+                    const isLightMode = body.classList.contains('light-mode');
+                    // Switch to the opposite theme
+                    const newTheme = isLightMode ? 'dark' : 'light';
+                    applyTheme(newTheme);
+                });
+            }
+
+            // Initialize theme on load
+            initializeTheme();
+        });
+    </script>
+</body>
+</html>

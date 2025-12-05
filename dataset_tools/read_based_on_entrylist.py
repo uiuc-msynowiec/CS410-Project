@@ -3,7 +3,7 @@ import sys
 import json
 
 if len(sys.argv) != 4:
-    print("usage: python readentry.py entryname entrylist file")
+    print("usage: python read_based_on_entrylist.py entryname entrylist file")
     print("   prints all lines that contain an entry named entryname")
     print("   contained within a list from the file entrylist")
     exit(0)

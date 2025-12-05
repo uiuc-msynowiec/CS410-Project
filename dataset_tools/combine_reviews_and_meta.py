@@ -22,4 +22,4 @@ with open(sys.argv[1], 'r') as file:
         items[asin]['text'] = items[asin]['text'] + " . " + jline['text']
 
 for item in items.values():
-    print(item)
+    print(json.dumps(item))
