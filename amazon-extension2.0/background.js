@@ -1,4 +1,10 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === "openSettingsPage") {
+    chrome.tabs.create({
+      url: chrome.runtime.getURL("settings.html")
+    });
+  }
+  
   if (message.action === 'runOpenAIQuery') {
     console.log('Background received query:', message.query);
 
