@@ -1,5 +1,5 @@
 # Setting up API
-## 1. go to amazon-extension2.0 folder
+## 1. go to amazonextension2.0 folder
 ## 2. Create a .env file in this folder.
 ## 3. Paste OPENAI_API_KEY=your_key in
 
