@@ -39,4 +39,4 @@ Go to [https://www.amazon.com](https://www.amazon.com) and verify that your exte
 
 ## 7. If you'd like the program to reindex everything type "y" when prompted, else if you've run the program before, there should be an index saved and you can just press "n".
 
-## 8. Type "exit" to quit the program whenever and enjoy using the program!
+## 8. Type "exit" to quit the program whenever and enjoy using the LLM/RAG!
