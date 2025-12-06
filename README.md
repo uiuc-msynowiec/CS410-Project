@@ -31,10 +31,10 @@ Go to [https://www.amazon.com](https://www.amazon.com) and verify that your exte
 
 ## 3. Once here, double click on the Electronics_combined_10000.zip file. This will uncompress the file which is ok.
 
-##4. Once the file has been unzipped, copy the file and put it under this path instead: /CS410-Project/rag_proj/reviews_extracted/reviewsset/Electronics_combined_10000.zip_extracted
+## 4. Once the file has been unzipped, copy the file and put it under this path instead: /CS410-Project/rag_proj/reviews_extracted/reviewsset/Electronics_combined_10000.zip_extracted
 
-# 4. Once the unzipped file has been moved to the correct folder, remove the file from this path as it is no longer necessary: /CS410-Project/rag_proj/reviewsset/, and go back to the terminal in VSCode and navigate to the rag_proj folder within the overall repo.
+## 5. Once the unzipped file has been moved to the correct folder, remove the file from this path as it is no longer necessary: /CS410-Project/rag_proj/reviewsset/, and go back to the terminal in VSCode and navigate to the rag_proj folder within the overall repo.
 
-# 5. Here now run the command "python ragpipeline.py"
+## 6. Here now run the command "python ragpipeline.py"
 
-# 6. Enjoy using the LLM/RAG!
+## 7. Enjoy using the LLM/RAG!
