@@ -10,6 +10,7 @@ import re
 import socket
 import asyncio
 import websockets
+from functools import partial
 
 # set up the zip files so it can pull the unzip files as well
 ZIP_PATH = "reviewsset.zip"                 # where the datasets are located
@@ -327,7 +328,7 @@ async def handler(websocket, path):
         print(answer)
         
         # Send back to Chrome extension
-        await websocket.send(response)
+        await websocket.send(answer)
 
 # main program
 async def main():
@@ -351,7 +352,9 @@ async def main():
             ingest_all_reviews(EXTRACT_DIR, index, metadata)
             save_faiss(index, metadata)
     
-    async with websockets.serve(handler, "localhost", 32001):
+    bound_handler = partial(handler, index=index, metadata=metadata)
+    
+    async with websockets.serve(bound_handler, "localhost", 32001):
         print("WebSocket bridge running on ws://localhost:32001")
         await asyncio.Future()  # run forever
 
