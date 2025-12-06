@@ -47,4 +47,4 @@ Here now run the command "python ragpipeline.py"
 If you'd like the program to reindex everything type "y" when prompted, else if you've run the program before, there should be an index saved and you can just press "n".
 
 ## Step 8
-Type "exit" to quit the program whenever and enjoy using the LLM/RAG!
+Type "exit" to quit the program whenever and enjoy using the program!
