@@ -262,7 +262,7 @@ def get_product_recommendation(query: str, index, metadata: List[Dict]) -> str:
     
     # Build context from top products
     context_details = []
-    for i, product in enumerate(returns, 1):
+    for product in (returns):
         reviews_summary = ""
         if product.get("reviews"):
             reviews_summary = "\n".join([
@@ -273,7 +273,7 @@ def get_product_recommendation(query: str, index, metadata: List[Dict]) -> str:
 
         # give 300 chars of context
         context_details.append(f"""
-            Product {i}: {product['product_name']}
+            Product {product['product_name']}
             ASIN: {product['product_id']}
             Average Rating: {product['average_rating']:.1f}/5 ({product['total_reviews']} reviews)
             Description: {product['description'][:300]}
