@@ -1,0 +1,30 @@
+{
+  "name": "Shopping Helper",
+  "version": "1.0",
+  "manifest_version": 3,
+
+  "action": {
+    "default_popup": "settings.html"
+  },
+
+  "permissions": ["storage", "tabs"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["modal.css"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["settings.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

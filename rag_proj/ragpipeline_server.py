@@ -308,15 +308,17 @@ def get_product_recommendation(query: str, index, metadata: List[Dict]) -> str:
 
     # ollama settings for response
     response = ollama.chat(
-        model="llama3.1",
+        model="llama3.2:3b",
         messages=[{"role": "user", "content": prompt}],
         options={"temperature": 0.7}
     )
     return response["message"]["content"]
 
-async def handler(websocket, path):
+async def handler(websocket, path, index, metadata):
     async for message in websocket:
         query = message.strip()
+        
+        print(f"received query: {query}")
         
         # if user wants to bail this is what to do
         if query.lower() == "exit":
