@@ -25,18 +25,26 @@ Go to [https://www.amazon.com](https://www.amazon.com) and verify that your exte
 
 # Running the local RAG program
 
-## 1. Clone the Github Repo, and open it up in VSCode
+## Step 1
+Clone the Github Repo, and open it up in VSCode
 
-## 2. Pull up the repo in a File Explorer/Finder window and navigate to the /CS410-Project/rag_proj/reviewsset/ folder. THIS HAS TO BE THE UNZIPPED FOLDER.
+## Step 2
+Pull up the repo in a File Explorer/Finder window and navigate to the /CS410-Project/rag_proj/reviewsset/ folder. THIS HAS TO BE THE UNZIPPED FOLDER.
 
-## 3. Once here, double click on the Electronics_combined_10000.zip file. This will uncompress the file which is ok.
+## Step 3
+Once here, double click on the Electronics_combined_10000.zip file. This will uncompress the file which is ok.
 
-## 4. Once the file has been unzipped, copy the file and put it under this path instead: /CS410-Project/rag_proj/reviews_extracted/reviewsset/Electronics_combined_10000.zip_extracted
+## Step 4
+Once the file has been unzipped, copy the file and put it under this path instead: /CS410-Project/rag_proj/reviews_extracted/reviewsset/Electronics_combined_10000.zip_extracted
 
-## 5. Once the unzipped file has been moved to the correct folder, remove the file from this path as it is no longer necessary: /CS410-Project/rag_proj/reviewsset/, and go back to the terminal in VSCode and navigate to the rag_proj folder within the overall repo.
+## Step 5
+Once the unzipped file has been moved to the correct folder, remove the file from this path as it is no longer necessary: /CS410-Project/rag_proj/reviewsset/, and go back to the terminal in VSCode and navigate to the rag_proj folder within the overall repo.
 
-## 6. Here now run the command "python ragpipeline.py"
+## Step 6
+Here now run the command "python ragpipeline.py"
 
-## 7. If you'd like the program to reindex everything type "y" when prompted, else if you've run the program before, there should be an index saved and you can just press "n".
+## Step 7
+If you'd like the program to reindex everything type "y" when prompted, else if you've run the program before, there should be an index saved and you can just press "n".
 
-## 8. Type "exit" to quit the program whenever and enjoy using the LLM/RAG!
+## Step 8
+Type "exit" to quit the program whenever and enjoy using the LLM/RAG!
