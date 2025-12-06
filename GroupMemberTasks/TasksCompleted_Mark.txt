@@ -3,6 +3,7 @@ Created a subset of the electronics dataset, zipped it and pushed it to the repo
 Merged the metadata file with the reviews file to create a single text for each item containing all reviews and useful descriptive data.
 Generated a processed corpus that matches MP1 to be able to use MP1 python tools to search the data.
 Created batch scripts to be able to recreate the data subset.
+Worked on creating ollama frontend framework
 
 
 Reformatted as a paragraph:

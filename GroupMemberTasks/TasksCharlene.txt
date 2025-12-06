@@ -5,10 +5,7 @@ Did frontend design of chrome extension and chose logo
 Cleaned up some files in the amazon extension folder in order to test/debug Alden's version 3.0
 Readded logo in JSON
 Compiled Progress Report
-
-TO DO:
-Draw flowchart
 Compile Slides with Nate
-Add light and dark mode.
+Worked on frontend design of light mode and dark mode features with Alden
 
 
