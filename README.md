@@ -25,6 +25,9 @@ Go to [https://www.amazon.com](https://www.amazon.com) and verify that your exte
 
 # Running the local RAG program
 
+## Requirements
+Make sure you have Ollama installed. If not, go to this link and install it: https://ollama.com/download. Furthermore, once installed go to Terminal or CommandPrompt and enter this command to double check the version: "ollama --version". If the version is something like 0.13.x, then you should be good to go. Follow this by pulling the following models from ollama: "ollama pull nomic-embed-text" and "ollama pull llama3.1"
+
 ## Step 1
 Clone the Github Repo, and open it up in VSCode
 

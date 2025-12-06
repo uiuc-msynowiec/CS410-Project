@@ -1,0 +1,4 @@
+# Requirements file:
+faiss-cpu==1.8.0
+numpy==1.26.4
+ollama==0.3.1
