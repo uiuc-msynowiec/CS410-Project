@@ -11,8 +11,8 @@ The scripts to extract the subset were:
 python .\mini.py .\meta_Electronics.jsonl 10000 > meta_Electronics_10000.mini.jsonl
 
 This script is passed 2 inputs:
-   a jsonl file which contained one entry per line in json format
-   the number of entries to write out
+- a jsonl file which contained one entry per line in json format
+- the number of entries to write out
 
 The output is printed to stdout so piping the output to a file would product a subset dataset in the same format as the original.
 
@@ -20,8 +20,8 @@ The output is printed to stdout so piping the output to a file would product a s
 python .\print_entry.py parent_asin .\meta_Electronics_10000.mini.jsonl > parent_asin_list_10000.txt
 
 This script is passed 2 inputs:
-   the name of an entry within the json line to print out
-   the name of a jsonl file to read the json entries from
+- the name of an entry within the json line to print out
+- the name of a jsonl file to read the json entries from
 
 The output is printed to stdout so piping the output to a text file produced a list of parent_asin values, one per line.
 
@@ -29,9 +29,9 @@ The output is printed to stdout so piping the output to a text file produced a l
 python .\read_based_on_entrylist.py parent_asin .\parent_asin_list_10000.txt .\Electronics.jsonl > Electronics_10000.mini.jsonl
 
 This script is passed 3 inputs:
-   the name of the json entry to compare
-   a text file containing a list of entries to compare against, separated one per line
-   a jsonl dataset file to compare with the text file entry list
+- the name of the json entry to compare
+- a text file containing a list of entries to compare against, separated one per line
+- a jsonl dataset file to compare with the text file entry list
 
 The script would read each json line and compare the parent_asin entry against the full list of parent_asin values in the text file. If the parent_asin was found in the list, the json line was printed to stdout. The result was piped to a file to create a file in the same format as the original, but only containing entries which correlated to the subset of products in the metadata subset.
 
@@ -44,15 +44,39 @@ The resultant subset dataset was then cleaned and combined to create a single da
 ### clean_meta.py
 python clean_meta.py meta_Electronics_10000.mini.jsonl > meta_Electronics_10000.mini.cleaned.jsonl
 
+This scripted is passed 1 input:
+- the name of the metadata file to perform cleaning on
+
+The script performs steps to clean undesired characters from the text, remove unneeded data, and combine searchable data. Nonstandard ascii characters and \[\]\(\)&,\-:"! were removed. The json entries images, videos, store, bought_together, and details were removed because they don't provide user searchable data. The json entries main_category, title, description, categories, and features all contained text information relevant to searching so they were combined into a json entry called text. The output from the tool is printed to stdout and piped to a jsonl file.
+
 ### clean_reviews.py
 python clean_reviews.py Electronics_10000.mini.jsonl > Electronics_10000.mini.cleaned.jsonl
+
+This script is passed 1 input:
+- the name of the user review file to perform cleaning on
+
+The script performs steps to clean undesired characters from the text, remove unneeded data, and combine searchable data. Nonstandard ascii characters and \[\]\(\)&,\-:"! were removed. The json entries images, asin, timestamp, helpful_vote, and verified_purchase were removed because they don't provide user searchable data. The json entries title, rating, user_id, and text all contained text information relevant to searching so they were combined into a json entry called text. The output from the tool is printed to stdout and piped to a jsonl file.
 
 ### combine_reviews_and_meta.py
 python combine_reviews_and_meta.py Electronics_10000.mini.cleaned.jsonl meta_Electronics_10000.mini.cleaned.jsonl > Electronics_combined_10000.jsonl
 
+This script is passed 2 inputs:
+- the cleaned user review jsonl file
+- the cleaned product information jsonl file
+
+This script combines the two datasets into a single dataset with one entry per product that contains all user review text related to that product in a single searchable text entry. The text entry from the product info is also combined with the user review text entry so each product has a single text entry for all information useful for indexing and searching. The output is printed to stdout and piped to a combined jsonl dataset file with the following json entries:
+- { average_rating, rating_number, price, parent_asin, text }
+
 ### generate_corpus.py
 python generate_corpus.py Electronics_combined_10000.jsonl -split
 python generate_corpus.py Electronics_combined_10000.jsonl
+
+This script is passed 2 input:
+- the cleaned and combined jsonl dataset file
+- an optional -split input that tells the script to generate a folder containing one json file per jsonl line
+
+If -split is not specified, an single jsonl corpus file will be generated. Otherwise a folder containing one json file per product will be generated. The json format is further simplified to match the format expected by pyserini libraries before indexing:
+- { id, contents }
 
 # Running the Cleaning Scripts
 The cleaning scripts have been batched into two sets. There are two versions of the scripts, one for a small dataset of 1000 items (process.bat and process_2.bat) and one for a larger set of 10000 items (process_10000.bat and process_2_10000.bat). The original dataset will need to be downloaded from the website below.
