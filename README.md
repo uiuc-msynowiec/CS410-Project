@@ -1,7 +1,8 @@
 # Setting up API
 ## 1. go to amazonextension2.0 folder
 ## 2. Create a .env file in this folder.
-## 3. Paste OPENAI_API_KEY=your_key in
+## 3. Get API key from text data or Coursera.
+## 4. Paste OPENAI_API_KEY=your_key in
 
 # 🚀 Loading the Chrome Extension
 
@@ -18,9 +19,10 @@ Click **“Load unpacked”** and select your extension’s folder.
 Go to [https://www.amazon.com](https://www.amazon.com) and verify that your extension works (e.g., banner appears or logo changes).
 
 #  Running Chrome Extension
-## Step 1: Once the extension is loaded, type in a query that is related to electronics (i.e...)
+## Step 1: Once the extension is loaded and you are in the page "amazon.com" type in a query that is related to electronics (i.e...)
 ## Step 2: Click on the button, "Run extension logic"
 ## Step 3: A similar item based on the query should appear in the status section of the chrome extension.
+## Step 4: The user can click on Settings and has the option to change to either light or dark mode based on their preference.
 
 
 # Running the local RAG program
