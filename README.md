@@ -54,7 +54,7 @@ Go to [https://www.amazon.com](https://www.amazon.com) and verify that your exte
 ## Step 1: 
 Once the extension is loaded and you are in the page "amazon.com" type in a query that is related to electronics (i.e... what is good electronics for a 20 year old.)
 ## Step 2: 
-Click on the button, "Run extension logic"
+Click on the button, "Run extension logic". In our latest Chrome Extension, click on the button that says "Ask AI".
 ## Step 3: 
 A similar item based on the query should appear in the status section of the chrome extension.
 ## Step 4: 
