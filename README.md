@@ -51,10 +51,14 @@ Go to [https://www.amazon.com](https://www.amazon.com) and verify that your exte
 
 
 #  Running Chrome Extension
-## Step 1: Once the extension is loaded and you are in the page "amazon.com" type in a query that is related to electronics (i.e...)
-## Step 2: Click on the button, "Run extension logic"
-## Step 3: A similar item based on the query should appear in the status section of the chrome extension.
-## Step 4: The user can click on Settings and has the option to change to either light or dark mode based on their preference.
+## Step 1: 
+Once the extension is loaded and you are in the page "amazon.com" type in a query that is related to electronics (i.e... what is good electronics for a 20 year old.)
+## Step 2: 
+Click on the button, "Run extension logic"
+## Step 3: 
+A similar item based on the query should appear in the status section of the chrome extension.
+## Step 4: 
+The user can click on Settings and has the option to change to either light or dark mode based on their preference.
 
 # Running the Cleaning Scripts
 The cleaning scripts have been batched into two sets. There are two versions of the scripts, one for a small dataset of 1000 items (process.bat and process_2.bat) and one for a larger set of 10000 items (process_10000.bat and process_2_10000.bat). The original dataset will need to be downloaded from the website below.
