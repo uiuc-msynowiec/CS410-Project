@@ -36,7 +36,7 @@ Go to: chrome://extensions
 Toggle **Developer mode** in the top-right corner.
 
 ## 3. Load the Extension
-Click **“Load unpacked”** and select your extension’s folder.
+Click **“Load unpacked”** and select your amazonextension3.0 folder.
 
 ## 4. Test It
 Go to [https://www.amazon.com](https://www.amazon.com) and verify that your extension works (e.g., banner appears or logo changes).
