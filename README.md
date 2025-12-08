@@ -1,3 +1,6 @@
+# Documentation
+Please see our documentation of the code in the documentation folder of our github
+
 # Running the local RAG program
 
 ## Requirements
