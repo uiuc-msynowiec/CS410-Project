@@ -1,5 +1,5 @@
 # Documentation
-Please see our documentation of the code in the documentation folder of our github
+Please see our documentation of the code in the documentation folder of our github. Below is instructions on how to run code.
 
 # Running the local RAG program
 
