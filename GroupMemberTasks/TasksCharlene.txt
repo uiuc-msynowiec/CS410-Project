@@ -7,5 +7,6 @@ Readded logo in JSON
 Compiled Progress Report
 Compile Slides with Nate
 Worked on frontend design of light mode and dark mode features with Alden
+Compiled documentation of Overview and Chrome Extension of Github
 
 
