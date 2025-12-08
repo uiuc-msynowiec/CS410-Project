@@ -48,3 +48,14 @@ This vector is then added to the FAISS index.
 
 ## Vector Search (FAISS)
 
+When the user enters a natural-language query the program does the following:
+1. Embeds the query with the same nomic-embed-text model provided by Ollama to make a vector
+2. Searches the entire FAISS index for the vectors closest to the vector generated for the user query
+3. Returns the entries that are the closest
+
+## LLM Based Recommendation
+
+The get_product_recommendation() function first gets the information of the reviews from the previous steps and passes it onto the Ollama LLM Model of llama3.1 using a prompt to find the best product, summarize its strengths, highlight the weaknesses, suggest alternatives, and to report those things in plaintext.
+
+## Main Loop
+The main loop calls all the functions in a coherent fashion allowing the user to query the Local RAG to find products closest to their request.
