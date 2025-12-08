@@ -1,5 +1,5 @@
 # Documentation
-Please see our documentation of the code in the documentation folder of our github. Below is instructions on how to run code.
+Please see our documentation of the code in the documentation folder of our github. Here: https://github.com/uiuc-msynowiec/CS410-Project/tree/main/Documentation. Below are the instructions on how to run our code.
 
 # Running the local RAG program
 
