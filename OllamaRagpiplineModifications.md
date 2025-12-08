@@ -1,7 +1,0 @@
-## Modifications Made to the RAG Pipeline to Integrate with the Chrome Extension
-In order to integrate with the Chrome extension, ragpipeline.py needed to be modified to become a WebSocket server to wait for queries from the extension and return the results over the same WebSocket. The internal architecture of the pipeline and how it interacted with Ollama remained unchanged.
-
-For this project where we didn't plan to run the toolset in a cloud enviroment, ragpipeline_server.py hosted a WebSocket server at ws://localhost:32001. An asynchronous handler was added to utilize the existing get_product_recommendation functionality which built the context from the indexed dataset, sent it to ollama, and returned the resulting LLM response. The handler then returned a websocket response to the Chrome extension instead of utilizing command prompt output.
-
-## Modifications Made to the Chrome Extension to Integrate with the RAG Pipeline Server
-The background.js task in the extension was the only modification necessary to convert from communicating with OpenAI to communicating with the RAG pipeline and Ollama. The OpenAI interface originally existed as an HTTP POST method. This was replaced in the background task with a WebSocket bridge connecting to ws://localhost:32001. The transmission and response was simple text so no other modifications were necessary to connect to the difference LLM pipelines. When the websocket interface responded, the listener would forward the response to the extension for display.
